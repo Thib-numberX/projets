@@ -35,6 +35,40 @@ p {
     line-height: 1.4;
 }
 
+
+/* button for dark mode */
+
+.container-dark {
+    /* border: 1px solid black; */
+    width: 50px;
+    height: 25px;
+    border-radius: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    box-shadow: inset 0px 0px 1px var(--second-border-color);
+}
+
+.container-dark_btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    background: var(--second-bg-color);
+    left: 0;
+    transition: 0.3s;
+}
+
+.btn-dark-right {
+    left: 25px;
+    transition: 0.3s;
+}
+
+
+/* modal for menu */
+
 .btn-modal {
     font-size: 1.8rem;
     background-color: var(--main-btn-bg-color);

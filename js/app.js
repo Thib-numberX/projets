@@ -3,6 +3,8 @@ const app = {
     init: function() {
         modal.btnModal();
         scrollDown.disappear();
+        darkMode.darkElement();
+
     },
 }
 
