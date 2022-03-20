@@ -1,54 +1,53 @@
-body{
-    --main-bg-color : white;
-    --second-bg-color :#bedefd;
-    --main-btn-bg-color:#A5CCF4;    
-    --bg-color-overlay : rgba(0, 0, 0, 0.5);
-
-    --main-color-title-h1 : #2843A6;
-    --main-color-title-h2 : #7EB3FF;
-    --main-color-title : #7E40F5;
-    --main-color-txt : black;
-
-    --main-border-color:#9B93EB;
-    --second-border-color:black;
-
+body {
+    --main-bg-color: white;
+    --second-bg-color: #bedefd;
+    --third-bg-color: #9fc0e2;
+    --main-btn-bg-color: #A5CCF4;
+    --bg-color-overlay: rgba(0, 0, 0, 0.5);
+    --main-color-title-h1: #2843A6;
+    --main-color-title-h2: #7EB3FF;
+    --main-color-title: #7E40F5;
+    --main-color-txt: black;
+    --main-border-color: #9B93EB;
+    --second-border-color: black;
     font-family: 'Lato', sans-serif;
-
 }
 
-h1{
-    color:var(--main-color-title-h1);
+h1 {
+    color: var(--main-color-title-h1);
 }
 
-h2, h3{
+h2,
+h3 {
     color: var(--main-color-title-h2);
 }
 
-h2{
+h2 {
     font-size: 1.8rem;
 }
 
-h3{
+h3 {
     font-size: 1.5rem;
 }
 
-p{
+p {
     color: var(--main-color-txt);
     line-height: 1.4;
 }
 
-.btn-modal{
+.btn-modal {
     font-size: 1.8rem;
     background-color: var(--main-btn-bg-color);
     border-radius: 50%;
     width: 50px;
     height: 50px;
     border: none;
-    box-shadow: 0px 0px 5px 2px var(--main-border-color);
+    /* box-shadow: 0px 0px 5px 2px var(--main-border-color); */
+    box-shadow: inset 0px 0px 5px 0px white;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index:5;
+    z-index: 5;
 }
 
 .modal-container {
@@ -61,7 +60,7 @@ p{
     height: 100vh;
 }
 
-.modal-active{
+.modal-active {
     display: flex;
 }
 
@@ -86,7 +85,7 @@ p{
     background-color: var(--main-bg-color);
 }
 
-.modal_menu-ul{
+.modal_menu-ul {
     display: flex;
     flex-direction: column;
     width: max-content;
@@ -99,13 +98,14 @@ p{
     margin-bottom: 25px;
 }
 
-.menu_items-li{
+.menu_items-li {
     margin-left: 15px;
 }
 
-.menu_items-li a{
+.menu_items-li a {
     cursor: pointer;
 }
+
 
 /* arrow on fisrt section */
 
@@ -113,8 +113,9 @@ p{
     position: absolute;
     top: 90vh;
     left: 50%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
 }
+
 
 /* .arrow span::before {
     content:"";
@@ -148,30 +149,43 @@ p{
     animation-delay: 4.95s;
     animation-duration: 5s;
     animation-iteration-count: infinite; */
+    transition-duration: 0.1s;
+    transition-property: visibility;
+    transition-timing-function: ease-out;
 }
 
-.arrow1{
-    animation-name:arrowmove;
+.arrowScrollNone {
+    visibility: hidden;
+    transition-duration: 0.1s;
+}
+
+
+/**
+Pour donner l'impression d'une direction, il faut agir sur le delay de chaque élément. Puis leur donner une durée égale
+*/
+
+.arrow1 {
+    animation-name: arrowmove;
     animation-delay: 0s;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-
-    animation-fill-mode: backward;
-}
-
-.arrow2{
-    animation-name:arrowmove;
-    animation-delay: 2s;
-    animation-duration: 2s;
-    animation-iteration-count: infinite; 
-}
-
-.arrow3{
-    animation-name:arrowmove;
-    animation-delay: 3s;
     animation-duration: 1s;
-    animation-iteration-count: infinite;  
+    animation-iteration-count: infinite;
+    /* animation-fill-mode: backward; */
 }
+
+.arrow2 {
+    animation-name: arrowmove;
+    animation-delay: 0.4s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.arrow3 {
+    animation-name: arrowmove;
+    animation-delay: 0.6s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
 
 /* .arrow span::after {
     content:"";
@@ -192,26 +206,26 @@ p{
     animation-iteration-count: infinite;
 } */
 
-@keyframes arrowmove{
-    from{
+@keyframes arrowmove {
+    from {
+        opacity: 20%;
+    }
+    to {
+        opacity: 100%;
+    }
+    to {
+        opacity: 100%;
+    }
+    to {
+        opacity: 100%;
+    }
+    to {
+        opacity: 20%;
+    }
+    to {
         opacity: 0%;
     }
-    to{
-        opacity: 20%;
-    }
-
-    to{
-        opacity: 80%;
-    }
-    to{
-        opacity:100%;
-    }
-    /* to{
-        opacity: 20%;
-    } */
-
 }
-
 
 
 /* second section with expérience */
@@ -230,6 +244,7 @@ h1.title_h1 {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding: 40px;
+    text-align: center;
 }
 
 h2.title_h2 {
@@ -242,13 +257,20 @@ h2.title_h2 {
 }
 
 section.container-experience {
-    background-color:var(--second-bg-color);
-    height: 100vh;
+    background-color: var(--second-bg-color);
+    /* height: 100vh; */
     padding: 20px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.experience_div {
+    border-radius: 20px;
+    box-shadow: -3px -3px 7px #ffffff7d, 3px 3px 7px #808080ab;
+    padding: 10px;
+    margin: 15px auto;
 }
 
 .experience_div-img-h3 {
@@ -260,14 +282,14 @@ section.container-experience {
     padding-bottom: 15px;
 }
 
-.experience_div-img{
+.experience_div-img {
     border-radius: 50%;
     width: 40px;
     height: 40px;
     margin-right: 10px;
 }
 
-strong{
+strong {
     display: block;
     margin-bottom: 10px;
     line-height: 1.4;
@@ -278,4 +300,16 @@ strong{
 p {
     letter-spacing: 0.1rem;
     text-align: center;
+}
+
+
+/* footer */
+
+footer {
+    background-color: var(--third-bg-color);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }

@@ -1,7 +1,8 @@
-const app={
+const app = {
 
-    init: function(){
+    init: function() {
         modal.btnModal();
+        scrollDown.disappear();
     },
 }
 
