@@ -107,6 +107,115 @@ p{
     cursor: pointer;
 }
 
+/* arrow on fisrt section */
+
+.arrow {
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%) ;
+}
+
+/* .arrow span::before {
+    content:"";
+    display: block;
+    position: absolute;
+    top: -14px;
+    right: -1px;
+    border: 2px solid transparent;
+    border-right-color: black;
+    border-bottom-color: black;
+    width: 20px;
+    height: 20px;
+    transform: translateX(-50%);
+    opacity: 20%;
+    animation-name:arrowmove;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+} */
+
+.arrow span {
+    display: block;
+    border: 2px solid transparent;
+    border-right-color: black;
+    border-bottom-color: black;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    opacity: 0%;
+    /* animation-name:arrowmove2;
+    animation-delay: 4.95s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+}
+
+.arrow1{
+    animation-name:arrowmove;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    animation-fill-mode: backward;
+}
+
+.arrow2{
+    animation-name:arrowmove;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; 
+}
+
+.arrow3{
+    animation-name:arrowmove;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;  
+}
+
+/* .arrow span::after {
+    content:"";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 19px;
+    border: 2px solid transparent;
+    border-right-color: black;
+    border-bottom-color: black;
+    width: 20px;
+    height: 20px;
+    transform: translateX(-50%);
+    opacity: 0%;
+    animation-name:arrowmove3;
+    animation-delay: 8.95s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+} */
+
+@keyframes arrowmove{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 20%;
+    }
+
+    to{
+        opacity: 80%;
+    }
+    to{
+        opacity:100%;
+    }
+    /* to{
+        opacity: 20%;
+    } */
+
+}
+
+
+
+/* second section with expérience */
+
 section.title {
     height: 100vh;
     display: flex;
