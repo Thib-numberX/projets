@@ -33,7 +33,7 @@ body.dark {
 
 main {
     background-color: var(--main-bg-color);
-    padding-top: 30px;
+    padding-top: 40px;
     transition: all 0.4s linear;
 }
 
@@ -545,5 +545,4 @@ input {
         height: 300px;
         justify-content: space-evenly;
     }
-    label {}
 }
