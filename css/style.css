@@ -10,7 +10,30 @@ body {
     --main-color-txt: black;
     --main-border-color: #9B93EB;
     --second-border-color: black;
+    background-color: var(--main-bg-color);
     font-family: 'Lato', sans-serif;
+    transition: all 0.4s linear;
+}
+
+body.dark {
+    --main-bg-color: #2843A6;
+    --second-bg-color: #495e72;
+    --third-bg-color: #3f648a;
+    --main-btn-bg-color: #2d4f70;
+    --bg-color-overlay: rgba(255, 255, 255, 0.609);
+    --main-color-title-h1: white;
+    --main-color-title-h2: white;
+    --main-color-title: #7E40F5;
+    --main-color-txt: white;
+    --main-border-color: #9B93EB;
+    --second-border-color: white;
+    color: var(--main-color-txt);
+    background-color: var(--main-bg-color);
+}
+
+main {
+    background-color: var(--main-bg-color);
+    transition: all 0.4s linear;
 }
 
 h1 {
@@ -35,6 +58,14 @@ p {
     line-height: 1.4;
 }
 
+.btn {
+    background-color: var(--third-bg-color);
+    color: var(--main-color-txt);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 3px var(--main-color-txt);
+}
+
 
 /* button for dark mode */
 
@@ -43,7 +74,7 @@ p {
     width: 50px;
     height: 25px;
     border-radius: 500px;
-    position: relative;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 10px;
@@ -116,7 +147,7 @@ p {
     height: 451px;
     margin: 0 auto;
     position: absolute;
-    background-color: var(--main-bg-color);
+    background-color: var(--second-bg-color);
 }
 
 .modal_menu-ul {
@@ -138,6 +169,10 @@ p {
 
 .menu_items-li a {
     cursor: pointer;
+}
+
+body.dark .menu_items-li a {
+    color: var(--main-color-txt);
 }
 
 
@@ -186,6 +221,11 @@ p {
     transition-duration: 0.1s;
     transition-property: visibility;
     transition-timing-function: ease-out;
+}
+
+body.dark .arrow span {
+    border-right-color: var(--main-color-txt);
+    border-bottom-color: var(--main-color-txt);
 }
 
 .arrowScrollNone {
@@ -272,7 +312,7 @@ section.title {
     justify-content: space-evenly;
 }
 
-h1.title_h1 {
+.title_h1 {
     text-transform: uppercase;
     letter-spacing: 5px;
     border-top: 2px solid black;
@@ -281,7 +321,7 @@ h1.title_h1 {
     text-align: center;
 }
 
-h2.title_h2 {
+.title_h2 {
     text-transform: capitalize;
     border-bottom: 2px solid black;
     padding-bottom: 10px;
@@ -348,6 +388,68 @@ footer {
     justify-content: space-around;
 }
 
+
+/* =========================================== 
+ log page 
+============================================ */
+
+.main_section-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title_h1.log {
+    border-top: unset;
+}
+
+.para-intro {
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+form {
+    width: 70%;
+    margin: 50px auto;
+    box-shadow: -3px -3px 5px #e1e0e070, 3px 3px 5px #00000085;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+}
+
+.form_label-input {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    letter-spacing: 0.1rem;
+    margin: 10px;
+}
+
+input {
+    border-radius: 10px;
+    border-color: var(--main-color-txt);
+    height: 30px;
+    color: var(--main-color-txt);
+    background-color: var(--main-bg-color);
+    padding: 5px;
+}
+
+.form_btn {
+    width: 70px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+
+/* =========================================== 
+ pad and computer 
+============================================ */
+
 @media screen and (min-width:700px) {
     .btn-modal {
         display: none;
@@ -357,8 +459,8 @@ footer {
         justify-content: flex-start;
         align-items: baseline;
         position: none;
-        /* width: 100%;
-        height: 100vh; */
+        margin-right: 10px;
+        width: 0px;
     }
     .modal_overlay {
         display: none;
@@ -373,12 +475,74 @@ footer {
         width: fit-content;
         height: 100vh;
         /* margin: 0 auto; */
-        position: none;
+        position: unset;
         background-color: var(--second-bg-color);
         padding: 0 10px;
+        transition: all 0.4s linear;
     }
     .menu_items-li {
         margin-left: 15px;
         display: none;
+        animation-name: mouseMenu;
+        animation-duration: 1s;
+        animation-timing-function: linear;
     }
+    .active_menu_items-li {
+        display: block;
+        animation-name: mouseMenu;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+    }
+    @keyframes mouseMenu {
+        from {
+            opacity: 0;
+            position: relative;
+            left: -20px;
+        }
+        to {
+            opacity: 100%;
+            position: relative;
+            left: 0px;
+        }
+    }
+    h1.title_h1 {
+        font-size: 3rem;
+    }
+    h2.title_h2 {
+        font-size: 2.5rem;
+    }
+    section.container-experience {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+    }
+    .experience_div {
+        width: 45%;
+        height: max-content;
+    }
+    strong {
+        font-size: 1.5rem;
+    }
+    /* =========================================== 
+ log page 
+============================================ */
+    .main_section-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        align-items: center;
+    }
+    .section-container_section {
+        width: 50%;
+    }
+    .para-intro {
+        width: 80%
+    }
+    form {
+        width: 350px;
+        height: 300px;
+        justify-content: space-evenly;
+    }
+    label {}
 }

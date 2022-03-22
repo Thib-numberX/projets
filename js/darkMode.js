@@ -10,5 +10,7 @@ const darkMode = {
         const btnElement = darkMode.darkElement();
         // console.log(btnElement);
         btnElement.classList.toggle('btn-dark-right');
+        bodyElement = document.querySelector('.body');
+        bodyElement.classList.toggle('dark');
     }
 }

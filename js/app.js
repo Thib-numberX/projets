@@ -4,7 +4,7 @@ const app = {
         modal.btnModal();
         scrollDown.disappear();
         darkMode.darkElement();
-
+        menuSideBAr.sideElement();
     },
 }
 
