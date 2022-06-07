@@ -1,6 +1,6 @@
 body {
     --main-bg-color: white;
-    --second-bg-color: #bedefd;
+    --second-bg-color: rgba(190, 222, 253);
     --third-bg-color: #9fc0e2;
     --main-btn-bg-color: #A5CCF4;
     --bg-color-overlay: rgba(0, 0, 0, 0.5);
@@ -135,6 +135,20 @@ p {
     height: 100%;
     position: absolute;
     background-color: var(--bg-color-overlay);
+    animation-name: overlay;
+    animation-delay: 0s;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes overlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 .modal_menu {
@@ -149,6 +163,20 @@ p {
     margin: 0 auto;
     position: absolute;
     background-color: var(--second-bg-color);
+    animation-name: modal;
+    animation-delay: 0s;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 .modal_menu-ul {
@@ -391,13 +419,14 @@ footer {
 
 
 /* =========================================== 
- log page 
+                    log page 
 ============================================ */
 
-.main_section-container {
+.main-log_section-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    justify-content: space-evenly;
 }
 
 .title_h1.log {
@@ -448,78 +477,86 @@ input {
 
 
 /* =========================================== 
- git page 
+                    git page 
 ============================================ */
 
+.main-container-git {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main_container-right {
+    width: 90%;
+    margin: 15px auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main_section-para p {
+    margin: 5px auto;
+    text-align: center;
+}
+
 .main_articles-container {
-    width: 80%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--second-bg-color);
 }
 
 .articles-container_article {
-    background-color: red;
-    width: 100%;
-    height: 100px;
+    background-color: var(--main-bg-color);
+    width: 300px;
+    height: 400px;
     border-radius: 10px;
-    margin: 60px auto;
+    margin: 30px auto;
     overflow: hidden;
-    /* transition: height 0.4s linear; */
-    animation-name: article;
-    animation-duration: 0.4s;
-    animation-fill-mode: linear;
+    box-shadow: 0px 0px 5px 2px var(--main-color-txt);
 }
 
 .articles-container_article:hover {
-    height: max-content;
-}
-
-@keyframes article {
-    from {
-        height: 100px;
-    }
-    to {
-        height: max-content;
-    }
+    transform: scale(1.03);
 }
 
 .git_title-h2 {
-    width: 100%;
+    width: 95%;
     border: unset;
-    margin: 10px auto 2px auto;
+    margin: 10px auto 0px auto;
+    text-align: start;
+    padding-left: 10px;
+    border-top: 1px solid black;
 }
 
 .container-article_para {
-    width: 80%;
-    text-align: center;
+    width: 90%;
+    text-align: match-parent;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: white;
-    text-shadow: 0 0 5px black;
-    border-radius: 10px;
+    color: black;
 }
 
-.article-soutien {
-    background-image: url(../images/contenu/Capture\ d’écran\ 2021-12-26\ 171654.png);
-    background-position: center;
-    background-size: cover;
+.article-soutien_img {
+    height: 70%;
 }
 
 
 /* =========================================== 
- pad and computer 
+                pad and computer 
 ============================================ */
 
-@media screen and (min-width:700px) {
+@media screen and (min-width:850px) {
+    main {
+        padding-top: 0px;
+    }
     .btn-modal {
         display: none;
     }
     .modal-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
-        position: none;
-        margin-right: 10px;
-        width: 0px;
+        display: block;
+        height: 0vh;
     }
     .modal_overlay {
         display: none;
@@ -529,15 +566,24 @@ input {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* border: 1px solid var(--second-border-color); */
         border-radius: 0 10px;
-        width: fit-content;
+        width: 50px;
         height: 100vh;
-        /* margin: 0 auto; */
-        position: unset;
+        position: absolute;
+        left: 0;
         background-color: var(--second-bg-color);
         padding: 0 10px;
         transition: all 0.4s linear;
+        box-shadow: 0 0 10px 1px;
+    }
+    .modal_menu:hover {
+        width: 150px;
+        transition: width 0.4s linear;
+    }
+    .modal_menu-ul {
+        position: absolute;
+        left: 0;
+        margin-left: 10px;
     }
     .menu_items-li {
         margin-left: 15px;
@@ -545,6 +591,9 @@ input {
         animation-name: mouseMenu;
         animation-duration: 1s;
         animation-timing-function: linear;
+    }
+    .menu_items-li:hover {
+        transform: scale(1.2);
     }
     .active_menu_items-li {
         display: block;
@@ -564,10 +613,10 @@ input {
             left: 0px;
         }
     }
-    h1.title_h1 {
+    .title_h1 {
         font-size: 3rem;
     }
-    h2.title_h2 {
+    .title_h2 {
         font-size: 2.5rem;
     }
     section.container-experience {
@@ -579,14 +628,16 @@ input {
     .experience_div {
         width: 45%;
         height: max-content;
+        max-width: 450px;
+        min-height: 350px;
     }
     strong {
         font-size: 1.5rem;
     }
     /* =========================================== 
- log page 
+                    log page 
 ============================================ */
-    .main_section-container {
+    .main-log_section-container {
         display: flex;
         flex-direction: row;
         height: 100vh;
@@ -599,8 +650,60 @@ input {
         width: 80%
     }
     form {
-        width: 350px;
-        height: 300px;
+        width: 60%px;
+        height: 50%;
         justify-content: space-evenly;
+    }
+    /* =========================================== 
+    git page 
+    ============================================ */
+    .main-container-git {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+    }
+    .main_container-right {
+        width: 50%;
+        padding-left: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main_articles-container {
+        width: 50%;
+        background-color: var(--second-bg-color);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+    }
+    .articles-container_article {
+        background-color: var(--main-bg-color);
+        width: 250px;
+        height: 250px;
+        margin: 20px 20px;
+        transition: width 0.4s ease-out;
+    }
+    .articles-container_article:hover {
+        transform: scale(1.1);
+    }
+    .article-soutien_img {
+        height: auto;
+        width: 100%;
+    }
+    .git_title-h1 {
+        font-size: 3rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .git_title-h2 {
+        width: 100%;
+        border: unset;
+        margin: 10px auto 2px auto;
+        font-size: 1.1rem;
     }
 }

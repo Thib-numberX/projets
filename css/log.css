@@ -1,0 +1,84 @@
+/* =========================================== 
+                    log page 
+============================================ */
+
+.main-log_section-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.title_h1.log {
+    border-top: unset;
+}
+
+.para-intro {
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+form {
+    width: 70%;
+    margin: 40px auto;
+    box-shadow: -3px -3px 5px #e1e0e070, 3px 3px 5px #00000085;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+}
+
+.form_label-input {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    letter-spacing: 0.1rem;
+    margin: 10px;
+}
+
+input {
+    border-radius: 10px;
+    border-color: var(--main-color-txt);
+    height: 30px;
+    color: var(--main-color-txt);
+    background-color: var(--main-bg-color);
+    padding: 5px;
+}
+
+.form_btn {
+    width: 70px;
+    height: 30px;
+    margin: 10px auto;
+}
+
+
+/* =========================================== 
+                pad and computer 
+============================================ */
+
+@media screen and (min-width:850px) {
+    /* =========================================== 
+                    log page 
+============================================ */
+    .main-log_section-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        align-items: center;
+    }
+    .section-container_section {
+        width: 50%;
+    }
+    .para-intro {
+        width: 80%
+    }
+    form {
+        width: 60%px;
+        height: 50%;
+        justify-content: space-evenly;
+    }
+}
