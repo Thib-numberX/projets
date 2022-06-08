@@ -59,14 +59,34 @@
                 <p class="para-intro">Un formulaire pour te connecter et découvrir de nouvelles pages protégées par un mot de passe. Mais afin de faciliter l'accès, les instructions pour te connecter sont en placeholder</p>
             </section>
             <section class="main_container-right section-container_section section-right">
-                <form action="" method="post">
+                <form action="" method="post" id="loginForm">
+                    <div class="form_label-input">
+                        <label for="lastname">Nom</label>
+                        <span class="form_span-img-input">
+                            <img src="../images/icon/form/name.png" alt="icon formulaire name" class="form-span_img" >
+                            <input type="text" name="lastname" id="lastname" placeholder="Votre nom">
+                        </span>
+                    </div>
+                    <div class="form_label-input">
+                        <label for="firstname">Prénom</label>
+                        <span class="form_span-img-input">
+                            <img src="../images/icon/form/name.png" alt="icon formulaire name" class="form-span_img" >
+                            <input type="text" name="firstname" id="firstname" placeholder="Votre prénom">
+                        </span>
+                    </div>
                     <div class="form_label-input">
                         <label for="mail">Identifiant</label>
-                        <input type="email" name="email" id="mail" placeholder="Votre email">
+                        <span class="form_span-img-input">
+                            <img src="../images/icon/form/email.png" alt="icon formulaire email" class="form-span_img" >
+                            <input type="email" name="email" id="mail" placeholder="Votre e-mail">
+                        </span>
                     </div>
                     <div class="form_label-input">
                         <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" placeholder="bonjour">
+                        <span class="form_span-img-input">
+                            <img src="../images/icon/form/password.png" alt="icon formulaire password" class="form-span_img" >
+                            <input type="password" name="password" id="password" placeholder="bonjour">
+                        </span>
                     </div>
                     <button type="submit" class="btn form_btn">Envoyer</button>
                 </form>
