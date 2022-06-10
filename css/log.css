@@ -105,6 +105,7 @@ input:focus {
     transform: scale(1.2);
     background-color: var(--second-border-color);
     color: var(--main-color-title);
+    box-shadow: none;
 }
 
 

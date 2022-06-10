@@ -5,6 +5,7 @@ const app = {
         scrollDown.disappear();
         darkMode.darkElement();
         menuSideBAr.sideElement();
+        loginForm.log();
     },
 }
 

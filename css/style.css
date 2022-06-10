@@ -67,6 +67,17 @@ p {
     box-shadow: 0 0 3px var(--main-color-txt);
 }
 
+.errorMessage {
+    text-align: initial;
+    font-style: italic;
+    font-size: 0.7rem;
+    color: red;
+}
+
+.required {
+    color: red;
+}
+
 
 /* button for dark mode */
 
